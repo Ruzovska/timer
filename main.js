@@ -25,7 +25,15 @@ function timer() {
     var countdown = timeout;
     var meow = setInterval(function() {
       countdown = countdown - countdownStep;
-      console.log(countdown/minute + ' minutes are left. Time is: ' + Date());
+      if (countdownStep === minute) {
+        console.log(countdown/minute + ' minutes are left. Time is: ' + Date());
+      };
+      if (countdownStep === second) {
+        console.log(countdown/second + ' seconds are left. Time is: ' + Date());
+      };
+      if (countdownStep === hour) {
+        console.log(countdown/hour + ' hours are left. Time is: ' + Date());
+      };
     }, countdownStep);
   };
 
